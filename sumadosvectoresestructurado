@@ -1,0 +1,67 @@
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+#include <string>
+#define MAX 100
+
+using namespace std;
+
+void leer(float A[MAX], int &tam1, string letra)
+{
+	cout<<"INGRESE EL TAMANHO DE"<<letra<<" VECTOR: "<<endl;
+	cin>>tam1;
+	int c1;
+	c1=0;
+	while(c1<tam1)
+	{
+		cout<<"V"<<letra<<"["<<c1<<"]=";
+		cin>>A[c1];
+		cout<<endl;
+		c1++;
+	}
+}
+void mostrar(float C[MAX],int tam3, string letra)
+{
+	int c1;
+	while(c1<tam3)
+			{
+				cout<<"V["<<c1<<"]="<<C[c1]<<endl;
+				c1++;
+			}
+}
+void sumar(float A[MAX], int tam1, float B[MAX], int tam2, float C[MAX], int&tam3)
+{
+	
+	        int c1=0;
+			int c2=0;
+			int c3=0;
+			while((c1<tam1)&&(c2<tam2))
+			{
+				C[c3]=A[c1]+B[c2];
+				c1++;
+				c2++;
+				c3++;
+			}
+			while(c1<tam1)
+			{
+				C[c3]=A[c1];
+				c1++;
+				c3++;
+			}
+			while(c2<tam2)
+			{
+				C[c3]=B[c2];
+				c2++;
+				c3++;
+			}
+			tam3=c3;
+}
+int menu ()
+{
+	int opcion;
+	cout<<"1. SUMAR VECTORES"<<endl;
+	cout<<"0. SALIR"<<endl;
+	cout<<"INGRESE LA OPCION:  "<<endl;
+	cin>>opcion;
+	return opcion;
+}
