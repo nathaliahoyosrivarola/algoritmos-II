@@ -1,0 +1,83 @@
+// sumavectores.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+#include"estructuradosumavectores.cpp"
+#define MAX 100
+
+using namespace std;
+
+void main()
+{
+	int tam1, tam2, tam3,c1, c2, c3, opcion;
+	float v1[MAX], v2[MAX], v3[MAX];
+	cout<<"INGRESE EL TAMANHO DEL PRIMER VECTOR: "<<endl;
+	cin>>tam1;
+	cout<<"INGRESE EL TAMANHO DEL SEGUNDO VCETOR: "<<endl;
+	cin>>tam2;
+	cout<<"INGRESE LOS VALORES DEL PRIMER VECTOR:"<<endl;
+	c1=0;
+	while(c1<tam1)
+	{
+		cout<<"V1["<<c1<<"]=";
+		cin>>v1[c1];
+		cout<<endl;
+		c1++;
+	}
+	cout<<"INGRESE LOS VALORES DEL SEGUNDO VECTOR:"<<endl;
+	c2=0;
+	while(c2<tam2)
+	{
+		cout<<"V1["<<c2<<"]=";
+		cin>>v2[c2];
+		cout<<endl;
+		c2++;
+	}
+	cout<<endl;
+	cout<<"1. SUMAR VECTORES"<<endl;
+	cout<<"0. SALIR"<<endl;
+	cout<<"INGRESE LA OPCION:  "<<endl;
+	cin>>opcion;
+	while((opcion>=0)&&(opcion>=1))
+	{
+		if(opcion==1)
+		{
+			c1=0;
+			c2=0;
+			c3=0;
+			while((c1<tam1)&&(c2<tam2))
+			{
+				v3[c3]=v1[c1]+v2[c2];
+				c1++;
+				c2++;
+				c3++;
+			}
+			while(c1<tam1)
+			{
+				v3[c3]=v1[c1];
+				c1++;
+				c3++;
+			}
+			while(c2<tam2)
+			{
+				v3[c3]=v2[c2];
+				c2++;
+				c3++;
+			}
+			tam3=c3;
+			c3=0;
+			while(c3<tam3)
+			{
+				cout<<"V3["<<c3<<"]="<<v3[c3]<<endl;
+				c3++;
+			}
+
+		}
+	cout<<"1. SUMAR VECTORES"<<endl;
+	cout<<"0. SALIR"<<endl;
+	cout<<"INGRESE LA OPCION:  "<<endl;
+	cin>>opcion;
+	}
+}
